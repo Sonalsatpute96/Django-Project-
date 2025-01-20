@@ -1,0 +1,160 @@
+<!-- Tables in HTML are used to display data in a structured format of rows and columns. 
+They are defined using the <table> tag, along with related tags to create the table's structure.
+
+    Basic Table Structure
+    <table>: Defines the table.
+    <tr> (Table Row): Defines a row in the table.
+    <th> (Table Header): Defines a header cell in the table.
+    <td> (Table Data): Defines a standard cell in the table. -->
+
+<!-- Adding Table Caption
+You can add a caption to your table using the <caption> tag. -->
+
+<!-- Adding Spanning Cells
+You can merge cells using the colspan(column merge) and rowspan(row merge) attributes. -->
+<!-- 
+<thead>-Which include heading part of table
+<tbody>-Which include body part of table
+    we can notice the change in inspect -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    {% for n in clist %}
+    <div>{{n}}</div>
+    {% endfor %}
+    <br>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Phone No</th>
+        <tr>
+        {% for d in student_Details %}
+        <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.phone}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    {% if numbers|length > 0 %}
+        {% for n in numbers %}
+          {% if n > 20 %}
+           {{n}}
+          {% endif %}
+
+         {% endfor %}
+        {% else %}
+        No data found
+    {% endif %}
+    <br>
+    <table border="1">
+        <caption>{{info}} {{clist}}</caption>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Roll No</th>
+            <th>Percentage</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>Sonal</td>
+            <td>1</td>
+            <td>90.73</td>
+        </tr>
+        <tr>
+            <td>Saurabh</td>
+            <td>2</td>
+            <td>85.67</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <br>
+
+    <table border="1">
+        <tr>
+            <th colspan="2">
+                Information
+            </th>
+        </tr>
+        <tr>
+            <td>Sonal</td>
+            <td>90.73</td>
+        </tr>
+        <tr>
+            <td>Saurabh</td>
+            <td>85.67</td>
+        </tr>
+    </table>
+
+    <hr>
+    <br>
+    <table border="1">
+        <tr>
+            <th colspan="3">Information</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Computer Branch</td>
+            <td>Sonal</td>
+            <td>90.73</td>
+        </tr>
+        <tr>
+            <td >Rakshita</td>
+            <td>85.67</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Mechanical Branch</td>
+            <td>Saurabh</td>
+            <td>86</td>
+        </tr>
+        <tr>
+            <td>Shubham</td>
+            <td>89</td>
+        </tr>
+
+    </table>
+    <hr>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+        <tr>
+            <td rowspan="2">John Doe</td>
+            <td>30</td>
+            <td>New York</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td>Boston</td>
+        </tr>
+        <tr>
+            <td>Jane Smith</td>
+            <td>25</td>
+            <td>Los Angeles</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Sam Johnson</td>
+            <td>35</td>
+            <td>Chicago</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>San Francisco</td>
+        </tr>
+    </table>
+    
+</body>
+</html>
